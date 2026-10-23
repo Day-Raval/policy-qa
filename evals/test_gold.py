@@ -7,6 +7,7 @@ HEAD = re.compile(r"^#{2,3} (\d+(?:\.\d+)?) ")
 
 
 def sections():
+    """Read fixture section bodies independently of the production indexer to check gold references."""
     out = {}
     for f in sorted((HERE / "corpus").glob("*.md")):
         sid = None
@@ -21,6 +22,7 @@ def sections():
 
 
 def main():
+    """Check answer-key consistency with the corpus, not retrieval quality or generated answers."""
     secs = sections()
     qs = json.loads((HERE / "questions.json").read_text(encoding="utf-8"))
     errors = []
