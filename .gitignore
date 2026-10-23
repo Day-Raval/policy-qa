@@ -1,0 +1,10 @@
+# Never commit real company policies: only the synthetic corpus in evals/corpus/ is allowed
+my-policies/
+*.private.md
+*.index.json
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+*.zip
+.DS_Store
