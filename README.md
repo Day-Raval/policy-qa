@@ -4,7 +4,7 @@ An agent skill for answering questions from company policy documents with sectio
 
 Use it for leave, expenses, travel, remote work, IT security, and conduct policies. The included policies describe a fictional company and are test fixtures.
 
-![A hand-drawn agent connects an answer to an exact policy quote, inspects the evidence, and excludes an old policy.](assets/policy-qa-illustrations/01-grounded-answers.png)
+![A hand-drawn agent connects an answer to an exact policy quote, inspects the evidence, and excludes an old policy.](assets/readme/01-grounded-answers.png)
 
 *Find relevant policy sections, anchor each claim to a quote, and check the answer before sharing.*
 
@@ -93,7 +93,7 @@ python evals/eval_retrieval.py
 
 Retrieval evaluation uses the top five sections (`k=5`). It reports the fraction of required evidence retrieved, questions with all required evidence, and coverage mistakes. Saved rewrites were written with knowledge of the corpus, so their results may overestimate performance on unseen questions.
 
-![A hand-drawn agent compares question-only search and saved rewrites against the same policy documents and gold sections, with a warning about the hand-written advantage.](assets/policy-qa-illustrations/02-rewrite-evaluation.png)
+![A hand-drawn agent compares question-only search and saved rewrites against the same policy documents and gold sections, with a warning about the hand-written advantage.](assets/readme/02-rewrite-evaluation.png)
 
 *Compare both runs against the same gold evidence; saved rewrites are a useful benchmark, not a guarantee for unseen questions.*
 
@@ -121,3 +121,4 @@ Missing answer files are reported as skipped. Review the skipped list before tre
 - [Script usage](skills/policy-qa/scripts/README.md)
 - [Policy format and evidence conventions](skills/policy-qa/references/README.md)
 - [Synthetic policy corpus](evals/corpus/)
+- [Documentation assets](assets/README.md)
