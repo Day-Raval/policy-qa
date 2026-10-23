@@ -32,7 +32,7 @@ python <skill>/scripts/retrieve.py <policy-folder> "<question>" --rewrite "<rewr
 Read `run.json`. Use only the `text` of the sections in `results`.
 
 - `excluded_superseded` lists outdated documents. Never cite them. Only if the user asks what an older policy said, rerun with `--include-superseded` and label those sections as superseded.
-- If `covered` is `false`, go to step 5 ("not covered").
+- If `covered` is `false`, go to step 6 ("not covered").
 
 ## 4. Answer
 
@@ -59,7 +59,20 @@ Citation rules:
 - Every number in a sentence (days, dollars, hours, dates) appears in that sentence's quotes.
 - If a fact is not in a retrieved section, leave it out.
 
-## 5. Not covered
+## 5. Check citations
+
+Save the answer to `answer.md` and run:
+
+```bash
+python <skill>/scripts/check_citations.py answer.md run.json
+```
+
+- If `ok` is `true`, give the user the answer.
+- Otherwise fix each listed sentence: copy the quote exactly from the section text, cite only sections in `run.json`, and remove any number that is not in a quote. Then run the check again.
+- Run the check at most 3 times. If it still fails, delete the failing sentences and add the line: `Needs review: some statements could not be matched to the policy text.`
+- Never show the user an answer whose check failed without that line.
+
+## 6. Not covered
 
 If `covered` is `false`, or the retrieved sections do not answer the question:
 
@@ -73,7 +86,7 @@ Ask HR or the policy owner for a definitive answer.
 
 Do not guess or fill gaps with typical practice.
 
-## 6. Limits
+## 7. Limits
 
 State these when relevant, briefly:
 - This is a reading of the documents provided, not legal or HR advice.
