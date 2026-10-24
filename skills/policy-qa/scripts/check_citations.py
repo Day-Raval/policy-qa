@@ -23,7 +23,8 @@ NO_CLAIM = re.compile(
     r"(?:Answer:\s*)?(?:The provided policies do not cover this\.|"
     r"The policies do not mention [\w -]+\.|"
     r"This is a reading of the documents provided, not legal or HR advice\.|"
-    r"Ask HR or the policy owner for a definitive answer\.)", re.I)
+    r"Ask HR or the policy owner for a definitive answer\.|"
+    r"Needs review: some statements could not be matched to the policy text\.)", re.I)
 CITE_ONLY = re.compile(r"^(?:\s*⟦\d+⟧[.,;]?)+\s*$")
 
 

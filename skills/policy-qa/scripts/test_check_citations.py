@@ -91,6 +91,11 @@ class TestCheck(unittest.TestCase):
             with self.subTest(answer=answer):
                 self.assertFalse(check(answer, RUN)["ok"])
 
+    def test_needs_review_line_allowed(self):
+        answer = ('Taxis are reimbursable. [travel.md#4.1: "Taxis and rideshare are reimbursable"]\n\n'
+                  "Needs review: some statements could not be matched to the policy text.")
+        self.assertTrue(check(answer, RUN)["ok"], check(answer, RUN)["errors"])
+
     def test_empty_answer(self):
         self.assertEqual(problems(""), ["answer is empty"])
 

@@ -55,7 +55,7 @@ Format:
 **Details**
 - <one supporting fact per bullet> [<section id>: "<exact quote>"]
 
-**Sources:** <section ids, with document titles and effective dates>
+**Sources:** <section id> (<document title>, <effective date>), <section id> (<document title>, <effective date>)
 ```
 
 Citation rules:
@@ -63,6 +63,7 @@ Citation rules:
 - The quote is copied character for character from the section text: a short span, not the whole section.
 - Every number in a sentence (days, dollars, hours, dates) appears in that sentence's quotes, or in the user's question.
 - If a fact is not in a retrieved section, leave it out.
+- The only sentences allowed without a citation, and the exact Sources and Closest-sections formats, are listed in answer-rules.md under "Lines the checker accepts without a citation". Copy them exactly.
 
 ## 5. Check citations
 
@@ -84,7 +85,7 @@ If `covered` is `false`, or the retrieved sections do not answer the question:
 ```
 **Answer:** The provided policies do not cover this.
 
-**Closest sections checked:** <up to 3 section ids and headings from run.json>
+**Closest sections checked:** <section id> <heading>, <section id> <heading>, <section id> <heading>
 
 Ask HR or the policy owner for a definitive answer.
 ```
@@ -93,5 +94,5 @@ Do not guess or fill gaps with typical practice.
 
 ## 7. Limits
 
-- This is a reading of the documents provided, not legal or HR advice. Say so when the user asks what they are entitled to or what they should do.
+- When the user asks what they are entitled to or what they should do, add this exact line: `This is a reading of the documents provided, not legal or HR advice.`
 - Do not show `run.json` or the check output to the user unless they ask. Show the final answer only.

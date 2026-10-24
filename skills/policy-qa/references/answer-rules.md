@@ -16,10 +16,27 @@ Every "Good" answer below passes `check_citations.py` against its own retrieval 
 6. **Match the user's case.** If a value depends on location, role or contract type, give the value for the user's case and mention the general value in Details.
 7. **Unnamed groups are not covered.** If the question is about a group no section names (volunteers, seasonal staff, board members), say the policies do not mention that group. Do not apply a general rule to them. You may cite who the rule *does* name.
 8. **Superseded means gone.** Never cite a superseded document unless the user asks what an older policy said. Then rerun retrieval with `--include-superseded`, say "superseded" in the sentence, and give the current value too.
-9. **Conflicts are reported, not resolved.** If two current policies give different answers, quote both, say they conflict, and suggest asking HR. Do not pick one.
+9. **Conflicts are reported, not resolved.** If two current policies give different answers, quote both, say they conflict, and end with the "Ask HR" line below. Do not pick one.
 10. **Partial answers are labelled.** If the policies answer part of a question, answer that part with citations and say which part is not covered.
 11. **No outside knowledge.** No "typically", "most companies", or legal interpretation. This is a reading of the documents, not legal or HR advice.
 12. **Several questions in one message:** run retrieval once per question and answer each under its own heading.
+
+## Lines the checker accepts without a citation
+
+Every other sentence needs a citation. These lines are checked character for character, so copy them exactly:
+
+| Line | Use it when |
+|---|---|
+| `**Answer:** The provided policies do not cover this.` | `covered` is false, or nothing retrieved answers the question |
+| `**Answer:** The policies do not mention <group>.` (letters, spaces and hyphens only) | the question names a group no section mentions |
+| `Ask HR or the policy owner for a definitive answer.` | after "not covered", "do not mention", or a conflict |
+| `This is a reading of the documents provided, not legal or HR advice.` | the user asks what they are entitled to or what to do |
+| `Needs review: some statements could not be matched to the policy text.` | the check still fails after 3 runs |
+
+Two list lines are checked against `run.json` instead:
+
+- `**Sources:**` is a comma-separated list. Each entry is `<section id> (<document title>, <effective date>)`, copied from `run.json`, one entry per section. Example: `leave.md#2.1 (Leave Policy, 2026-01-01), leave.md#3.1 (Leave Policy, 2026-01-01)`. Do not group IDs, abbreviate them (`#3.1`), or add words such as "effective".
+- `**Closest sections checked:**` is a comma-separated list of `<section id> <heading>`, copied from `run.json`. Example: `travel.md#1.2 Capital cities, learning.md#1.2 Conferences`.
 
 ## Example policy text
 
@@ -53,7 +70,7 @@ Good:
 - Conference fees are paid from the training budget. [learning.md#1.2: "Conference fees count toward the training budget."]
 - Contractors still get mandatory compliance training for free. [learning.md#3.1: "Mandatory compliance training is provided free of charge."]
 
-**Sources:** learning.md#1.2, learning.md#3.1 (Learning and Development Policy, effective 2026-03-01)
+**Sources:** learning.md#1.2 (Learning and Development Policy, 2026-03-01), learning.md#3.1 (Learning and Development Policy, 2026-03-01)
 ```
 
 Bad: "Yes, conference fees count toward the training budget." This stops at 1.2 and misses the contractor rule in 3.1.
@@ -70,7 +87,7 @@ Good:
 **Details**
 - The $180 limit applies to other cities. [travel.md#1.1: "Lodging is reimbursed up to $180 per night."]
 
-**Sources:** travel.md#1.1, travel.md#1.2 (Travel Policy, effective 2026-03-01)
+**Sources:** travel.md#1.1 (Travel Policy, 2026-03-01), travel.md#1.2 (Travel Policy, 2026-03-01)
 ```
 
 Bad: "The lodging limit is $180 per night." The number is in the policy, but it is the wrong one for Paris.
@@ -82,14 +99,14 @@ Question: "Do seasonal staff get a training budget?"
 Good:
 
 ```
-**Answer:** The policies do not mention seasonal staff, so I cannot say whether they get a training budget.
+**Answer:** The policies do not mention seasonal staff.
 
 **Details**
 - The training budget is described for permanent employees. [learning.md#1.1: "Each permanent employee has a training budget of $1,200 per calendar year."]
 
-Ask HR or the policy owner whether seasonal staff count as permanent employees.
+Ask HR or the policy owner for a definitive answer.
 
-**Sources:** learning.md#1.1 (Learning and Development Policy, effective 2026-03-01)
+**Sources:** learning.md#1.1 (Learning and Development Policy, 2026-03-01)
 ```
 
 Bad: "Seasonal staff get $1,200 per year." This applies the general rule to a group the policy never names.
@@ -103,7 +120,7 @@ Good:
 ```
 **Answer:** In Tokyo your lodging limit is $260 per night and your daily food per diem is $60. [travel.md#1.2: "In Berlin, Paris and Tokyo, lodging is reimbursed up to $260 per night."] [travel.md#2.1: "The daily per diem for food is $60."]
 
-**Sources:** travel.md#1.2, travel.md#2.1 (Travel Policy, effective 2026-03-01)
+**Sources:** travel.md#1.2 (Travel Policy, 2026-03-01), travel.md#2.1 (Travel Policy, 2026-03-01)
 ```
 
 ## Example 5: not covered
@@ -131,7 +148,7 @@ Good:
 ```
 **Answer:** The superseded policy set the training budget at $800 per year; the current policy sets it at $1,200. [learning-2025.md#1.1: "training budget of $800 per calendar year"] [learning.md#1.1: "training budget of $1,200 per calendar year"]
 
-**Sources:** learning-2025.md#1.1 (Learning and Development Policy (2025), superseded on 2026-03-01), learning.md#1.1 (Learning and Development Policy, effective 2026-03-01)
+**Sources:** learning-2025.md#1.1 (Learning and Development Policy (2025), 2025-01-01), learning.md#1.1 (Learning and Development Policy, 2026-03-01)
 ```
 
 Without the word "superseded" in the sentence, the check fails.
@@ -145,9 +162,9 @@ Good:
 ```
 **Answer:** Two current policies conflict on this: the Equipment Policy gives $40 per month and the On-Call Policy gives $35 per month. [equipment.md#1.1: "phone allowance of $40 per month"] [on-call.md#2.1: "phone allowance of $35 per month"]
 
-Ask HR or the policy owner which amount applies.
+Ask HR or the policy owner for a definitive answer.
 
-**Sources:** equipment.md#1.1 (Equipment Policy, effective 2026-03-01), on-call.md#2.1 (On-Call Policy, effective 2026-03-01)
+**Sources:** equipment.md#1.1 (Equipment Policy, 2026-03-01), on-call.md#2.1 (On-Call Policy, 2026-03-01)
 ```
 
 ## What the citation check rejects
