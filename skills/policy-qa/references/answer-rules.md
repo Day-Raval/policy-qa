@@ -31,6 +31,7 @@ Every other sentence needs a citation. These lines are checked character for cha
 | `**Answer:** The policies do not mention <group>.` (letters, spaces and hyphens only) | the question names a group no section mentions |
 | `Ask HR or the policy owner for a definitive answer.` | after "not covered", "do not mention", or a conflict |
 | `This is a reading of the documents provided, not legal or HR advice.` | the user asks what they are entitled to or what to do |
+| `For a legal opinion, consult an employment lawyer.` | the user asks a legal question (can I sue, is this legal) |
 | `Needs review: some statements could not be matched to the policy text.` | the check still fails after 3 runs |
 
 Two list lines are checked against `run.json` instead:

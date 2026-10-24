@@ -1,6 +1,6 @@
 ---
 name: policy-qa
-description: Answers any question about company policy documents the user has provided or attached (HR, leave, expenses, travel, IT security, code of conduct), including quick lookups like "what does our expense policy say about receipts". Uses only those documents, cites a numbered section with an exact quote for every sentence, ignores superseded policies, and says "not covered" instead of guessing. Use whenever policy files are attached and the user asks what a policy says, allows, requires or covers. Do not use for legal advice, for questions with no policy files, or for writing or editing policies.
+description: Answers any question about company policy documents the user has provided or attached (HR, leave, expenses, travel, IT security, code of conduct), including quick lookups like "what does our expense policy say about receipts". Uses only those documents, cites a numbered section with an exact quote for every sentence, ignores superseded policies, and says "not covered" instead of guessing. Use whenever policy files are attached and the user asks what a policy says, allows, requires or covers. If the user also asks a legal question (can I sue, is this legal), still use it to report what the policies say, without a legal opinion. Do not use for questions with no policy files, or for writing or editing policies.
 ---
 
 # Policy Q&A
@@ -63,17 +63,18 @@ Citation rules:
 - The quote is copied character for character from the section text: a short span, not the whole section.
 - Every number in a sentence (days, dollars, hours, dates) appears in that sentence's quotes, or in the user's question.
 - If a fact is not in a retrieved section, leave it out.
+- Keep the **Answer:** line to one sentence, or cite each sentence in it.
 - The only sentences allowed without a citation, and the exact Sources and Closest-sections formats, are listed in answer-rules.md under "Lines the checker accepts without a citation". Copy them exactly.
 
 ## 5. Check citations
 
-Save the answer to `answer.md` and run:
+Always run this, even for a one-line answer. Save the answer to `answer.md` and run:
 
 ```bash
 python <skill>/scripts/check_citations.py answer.md run.json
 ```
 
-- If `ok` is `true`, give the user the answer.
+- If `ok` is `true`, show the user the text of `answer.md` exactly as checked. Do not reword, split or add sentences afterwards; if you change anything, run the check again.
 - Otherwise fix each listed sentence: copy the quote exactly from the section text, cite only sections in `run.json`, and remove any number that is not in a quote. Then run the check again.
 - Run the check at most 3 times. If it still fails, delete the failing sentences and add the line: `Needs review: some statements could not be matched to the policy text.`
 - Never show the user an answer whose check failed without that line.
@@ -95,4 +96,5 @@ Do not guess or fill gaps with typical practice.
 ## 7. Limits
 
 - When the user asks what they are entitled to or what they should do, add this exact line: `This is a reading of the documents provided, not legal or HR advice.`
+- For legal questions (can I sue, is this legal, what does the law say), answer only what the policies say, give no legal opinion and no outside law, and end with the not-legal-advice line and `For a legal opinion, consult an employment lawyer.`
 - Do not show `run.json` or the check output to the user unless they ask. Show the final answer only.

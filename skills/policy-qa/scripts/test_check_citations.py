@@ -96,6 +96,11 @@ class TestCheck(unittest.TestCase):
                   "Needs review: some statements could not be matched to the policy text.")
         self.assertTrue(check(answer, RUN)["ok"], check(answer, RUN)["errors"])
 
+    def test_lawyer_line_allowed_but_not_variants(self):
+        good = 'Taxis are reimbursable. [travel.md#4.1: "Taxis and rideshare are reimbursable"]\n\n'
+        self.assertTrue(check(good + "For a legal opinion, consult an employment lawyer.", RUN)["ok"])
+        self.assertFalse(check(good + "For a legal opinion, consult a lawyer; you will likely win.", RUN)["ok"])
+
     def test_empty_answer(self):
         self.assertEqual(problems(""), ["answer is empty"])
 
