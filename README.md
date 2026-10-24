@@ -27,6 +27,8 @@ Q: Can contractors expense a home-office chair?
 **Sources:** expenses.md#6.1 (Expense Policy, 2026-01-01), expenses.md#4.2 (Expense Policy, 2026-01-01)
 ```
 
+![A grounded answer: every sentence cites a policy section with an exact quote](assets/readme/01-grounded-answers.png)
+
 ## How it works
 
 ```
@@ -133,6 +135,8 @@ Tested in Claude.ai (v1.0.0), each run in a fresh chat with the skill uploaded w
 | Triggering without `/policy-qa` | 5/5 held-out policy questions; stays out of "write a policy" requests (2/2) |
 | Legal question ("Can I sue?") | Policy facts only, no legal opinion, points to an employment lawyer |
 | Old-policy question | Labels the 2024 value as superseded and gives the current one |
+
+![Retrieval evaluation with and without the model's query rewrites](assets/readme/02-rewrite-evaluation.png)
 
 Testing found and fixed 6 issues before release, including two description wordings that made the skill skip legal and old-policy questions, and a model habit of rewording an answer after it passed the check. Full record: `evals/behavior-tests.md`.
 
