@@ -9,6 +9,8 @@ Answer questions from the user's policy documents only, with a checkable citatio
 Scripts use the Python standard library only (3.9+). `<skill>` below means this skill's folder.
 Read `<skill>/references/answer-rules.md` before writing your first answer in a conversation.
 
+**Most important rule:** your reply must be the exact text of `answer.md` that passed `check_citations.py`. Do not polish, split, merge or reword it after the check. Write the answer in its final form before checking.
+
 ## 1. Find the policies
 
 - Copy the user's policy files (`.md` or `.txt`) into a new working folder, for example `policies/`, so other uploads are not searched. In Claude.ai, uploaded files are usually in `/mnt/user-data/uploads/`.
@@ -74,7 +76,7 @@ Always run this, even for a one-line answer. Save the answer to `answer.md` and 
 python <skill>/scripts/check_citations.py answer.md run.json
 ```
 
-- If `ok` is `true`, show the user the text of `answer.md` exactly as checked. Do not reword, split or add sentences afterwards; if you change anything, run the check again.
+- If `ok` is `true`, run `cat answer.md` and send its output as your reply, character for character. If you want to change anything, edit `answer.md` and run the check again first.
 - Otherwise fix each listed sentence: copy the quote exactly from the section text, cite only sections in `run.json`, and remove any number that is not in a quote. Then run the check again.
 - Run the check at most 3 times. If it still fails, delete the failing sentences and add the line: `Needs review: some statements could not be matched to the policy text.`
 - Never show the user an answer whose check failed without that line.
