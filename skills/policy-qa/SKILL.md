@@ -1,6 +1,6 @@
 ---
 name: policy-qa
-description: Answers questions about a set of company policy documents (HR, leave, expenses, travel, IT security, code of conduct) using only those documents. Every sentence cites a numbered section with an exact quote, superseded policies are ignored, and questions the policies do not cover get "not covered" instead of a guess. Use when given policy files and asked what a policy says, allows or requires. Do not use for legal advice, for questions with no policy files, or for writing or editing policies.
+description: Answers any question about company policy documents the user has provided or attached (HR, leave, expenses, travel, IT security, code of conduct), including quick lookups like "what does our expense policy say about receipts". Uses only those documents, cites a numbered section with an exact quote for every sentence, ignores superseded policies, and says "not covered" instead of guessing. Use whenever policy files are attached and the user asks what a policy says, allows, requires or covers. Do not use for legal advice, for questions with no policy files, or for writing or editing policies.
 ---
 
 # Policy Q&A
