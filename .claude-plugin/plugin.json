@@ -1,0 +1,22 @@
+{
+  "name": "policy-qa",
+  "displayName": "Policy Q&A",
+  "version": "1.0.0",
+  "description": "Answers questions about company policy documents (HR, leave, expenses, travel, IT security, code of conduct) using only those documents. Hybrid retrieval finds the sections, every sentence cites a numbered section with an exact quote, a bundled script checks each quote and number before the answer is shown, superseded policies are excluded, and questions the policies don't cover get \"not covered\" instead of a guess.",
+  "author": {
+    "name": "Dayesh Raval"
+  },
+  "homepage": "https://github.com/Day-Raval/policy-qa",
+  "repository": "https://github.com/Day-Raval/policy-qa",
+  "license": "MIT",
+  "keywords": [
+    "hr",
+    "policy",
+    "question-answering",
+    "retrieval",
+    "citations",
+    "provenance"
+  ],
+  "privacyPolicyUrl": "https://github.com/Day-Raval/policy-qa#privacy-and-safety",
+  "documentationUrl": "https://github.com/Day-Raval/policy-qa#readme"
+}

@@ -1,0 +1,58 @@
+name: validate
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Retriever tests
+        run: python skills/policy-qa/scripts/test_retrieve.py
+      - name: Citation checker tests
+        run: python skills/policy-qa/scripts/test_check_citations.py
+      - name: Gold set matches the corpus
+        run: python evals/test_gold.py
+      - name: Answer scorer tests
+        run: python evals/test_score_answers.py
+      - name: Retrieval gate (recall@5 = 1.0, no false "not covered", only q33 falsely covered)
+        run: |
+          python evals/eval_retrieval.py > retrieval.json
+          python - <<'PY'
+          import json
+          r = json.load(open("retrieval.json"))["with_saved_rewrites"]
+          assert r["recall@5"] == 1.0, r
+          assert r["false_abstentions"] == [], r
+          assert r["false_coverage"] == ["q33"], r
+          print("retrieval gate ok")
+          PY
+      - name: Saved Claude.ai answers still score 1.0
+        run: python evals/score_answers.py
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install -g @anthropic-ai/claude-code
+      - name: Validate plugin and marketplace
+        run: claude plugin validate .
+      - name: Every corpus file is marked synthetic
+        run: |
+          bad=$(grep -L 'SYNTHETIC' evals/corpus/*.md || true)
+          if [ -n "$bad" ]; then echo "Corpus files without the SYNTHETIC banner:"; echo "$bad"; exit 1; fi
+      - name: No test data inside the skill folder
+        run: |
+          extra=$(git ls-files 'skills/policy-qa/**' | grep -vE '^skills/policy-qa/(SKILL\.md|references/answer-rules\.md|scripts/[a-z_]+\.py)$' || true)
+          if [ -n "$extra" ]; then echo "Unexpected files in the skill folder:"; echo "$extra"; exit 1; fi
+      - name: Installer puts the skill in all 5 agents
+        run: |
+          H=$(mktemp -d)
+          HOME=$H ./install.sh --all
+          test "$(find $H -name SKILL.md | wc -l)" -eq 5

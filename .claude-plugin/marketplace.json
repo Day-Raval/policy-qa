@@ -1,0 +1,14 @@
+{
+  "name": "policy-qa",
+  "description": "Policy Q&A by Dayesh Raval: answers from your policy documents, with every sentence quoted and checked.",
+  "owner": {
+    "name": "Dayesh Raval"
+  },
+  "plugins": [
+    {
+      "name": "policy-qa",
+      "source": "./",
+      "description": "Company policy questions answered only from your documents, with a checked quote on every sentence."
+    }
+  ]
+}
