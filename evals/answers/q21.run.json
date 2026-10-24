@@ -1,0 +1,70 @@
+{
+ "question": "On a trip to London, what are my hotel cap and daily meal allowance?",
+ "queries": [
+  "On a trip to London, what are my hotel cap and daily meal allowance?",
+  "hotel cap London high-cost cities per night",
+  "daily meal allowance London high-cost cities"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "travel.md#3.2",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "expenses.md#2.2",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "High-cost cities",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "In New York, San Francisco and London, the daily meal allowance is $95.",
+   "score": 0.09679
+  },
+  {
+   "id": "travel.md#3.2",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "High-cost cities",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "In New York, San Francisco and London, the hotel cap is $350 per night.",
+   "score": 0.09628
+  },
+  {
+   "id": "travel.md#3.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Nightly cap",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Hotel costs are reimbursed up to $250 per night.",
+   "score": 0.07889
+  },
+  {
+   "id": "expenses.md#3.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Limits",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Client meals may cost up to $120 per person. A director must approve any client meal over $500 in total.",
+   "score": 0.07584
+  },
+  {
+   "id": "travel.md#1.2",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Booking channel",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Flights and hotels must be booked through the company travel portal.",
+   "score": 0.07292
+  }
+ ]
+}

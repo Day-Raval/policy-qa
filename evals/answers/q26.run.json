@@ -1,0 +1,70 @@
+{
+ "question": "Can I accept a $150 gift basket from a vendor?",
+ "queries": [
+  "Can I accept a $150 gift basket from a vendor?",
+  "accepting gifts from suppliers worth $150",
+  "gift value limit per year one source"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "code-of-conduct.md#1.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "code-of-conduct.md#1.1",
+   "doc": "code-of-conduct.md",
+   "title": "Code of Conduct",
+   "heading": "Accepting gifts",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees may accept gifts from suppliers or clients worth up to $100 per year from any one source. Gifts above that value must be declined or reported to Compliance.",
+   "score": 0.09836
+  },
+  {
+   "id": "expenses.md#3.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Limits",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Client meals may cost up to $120 per person. A director must approve any client meal over $500 in total.",
+   "score": 0.06147
+  },
+  {
+   "id": "remote-work.md#3.1",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Working abroad",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees may work from a country other than their country of employment for up to 30 days in a calendar year, with prior approval from HR.",
+   "score": 0.05939
+  },
+  {
+   "id": "leave.md#2.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Annual paid leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Full-time employees earn 20 days of paid leave per calendar year, accrued at 1.67 days per month.",
+   "score": 0.05837
+  },
+  {
+   "id": "code-of-conduct.md#2.1",
+   "doc": "code-of-conduct.md",
+   "title": "Code of Conduct",
+   "heading": "Disclosure",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees must disclose any outside job, board seat or investment in a supplier to Compliance within 30 days.",
+   "score": 0.04362
+  }
+ ]
+}

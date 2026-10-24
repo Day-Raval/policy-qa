@@ -1,0 +1,70 @@
+{
+ "question": "Can I fly business class to Tokyo?",
+ "queries": [
+  "Can I fly business class to Tokyo?",
+  "flights cabin class business class economy",
+  "business class flights longer than 6 hours directors Tokyo"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "travel.md#2.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "travel.md#2.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Cabin class",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Economy class is the standard for all flights. Directors and above may book business class for flights longer than 6 hours.",
+   "score": 0.09836
+  },
+  {
+   "id": "expenses.md#2.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Daily meal allowance",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When travelling on company business, the daily meal allowance is $75.",
+   "score": 0.09412
+  },
+  {
+   "id": "travel.md#1.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Approval",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "All business travel needs manager approval at least 14 days before departure, except for client emergencies.",
+   "score": 0.09338
+  },
+  {
+   "id": "travel.md#4.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Taxis and rideshare",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Taxis and rideshare are reimbursable on business trips. Rental cars need manager approval.",
+   "score": 0.09306
+  },
+  {
+   "id": "travel.md#1.2",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Booking channel",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Flights and hotels must be booked through the company travel portal.",
+   "score": 0.07649
+  }
+ ]
+}

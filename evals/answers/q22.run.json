@@ -1,0 +1,70 @@
+{
+ "question": "How far in advance does business travel need approval?",
+ "queries": [
+  "How far in advance does business travel need approval?",
+  "business travel manager approval days before departure",
+  "travel booking approval in advance"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "travel.md#1.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "travel.md#1.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Approval",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "All business travel needs manager approval at least 14 days before departure, except for client emergencies.",
+   "score": 0.0981
+  },
+  {
+   "id": "travel.md#4.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Taxis and rideshare",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Taxis and rideshare are reimbursable on business trips. Rental cars need manager approval.",
+   "score": 0.09527
+  },
+  {
+   "id": "expenses.md#5.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Approval chain",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Claims up to $1,000 are approved by the employee's manager. Claims above $1,000 also need approval from Finance.",
+   "score": 0.09476
+  },
+  {
+   "id": "travel.md#2.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Cabin class",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Economy class is the standard for all flights. Directors and above may book business class for flights longer than 6 hours.",
+   "score": 0.09222
+  },
+  {
+   "id": "travel.md#1.2",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Booking channel",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Flights and hotels must be booked through the company travel portal.",
+   "score": 0.0918
+  }
+ ]
+}

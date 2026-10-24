@@ -1,0 +1,70 @@
+{
+ "question": "Who has to approve a $1,500 expense claim?",
+ "queries": [
+  "Who has to approve a $1,500 expense claim?",
+  "expense claim approval chain manager Finance",
+  "claims above $1,000 approval $1,500"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "expenses.md#5.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "expenses.md#5.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Approval chain",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Claims up to $1,000 are approved by the employee's manager. Claims above $1,000 also need approval from Finance.",
+   "score": 0.09836
+  },
+  {
+   "id": "expenses.md#1.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Submission deadline",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Expense claims must be submitted in the finance portal within 30 days of the expense.",
+   "score": 0.09554
+  },
+  {
+   "id": "expenses.md#6.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Contractor expenses",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Contractors may claim travel costs only when pre-approved in writing by their manager. No other expenses are reimbursable for contractors.",
+   "score": 0.09336
+  },
+  {
+   "id": "travel.md#1.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Approval",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "All business travel needs manager approval at least 14 days before departure, except for client emergencies.",
+   "score": 0.0784
+  },
+  {
+   "id": "expenses.md#3.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Limits",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Client meals may cost up to $120 per person. A director must approve any client meal over $500 in total.",
+   "score": 0.07653
+  }
+ ]
+}

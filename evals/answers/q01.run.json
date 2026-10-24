@@ -1,0 +1,70 @@
+{
+ "question": "How much paid leave do full-time employees get each year?",
+ "queries": [
+  "How much paid leave do full-time employees get each year?",
+  "full-time employees annual paid leave days per calendar year",
+  "paid leave accrual"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "leave.md#2.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "leave.md#2.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Annual paid leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Full-time employees earn 20 days of paid leave per calendar year, accrued at 1.67 days per month.",
+   "score": 0.09836
+  },
+  {
+   "id": "leave.md#2.2",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Part-time employees",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Part-time employees earn paid leave in proportion to their contracted hours. An employee contracted for 20 hours a week earns 10 days per year.",
+   "score": 0.09431
+  },
+  {
+   "id": "leave.md#3.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Sick days",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees receive 10 paid sick days per calendar year, separate from annual paid leave. Unused sick days do not carry over.",
+   "score": 0.09406
+  },
+  {
+   "id": "leave.md#4.2",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Bereavement leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees may take up to 5 paid days for the death of an immediate family member and up to 2 paid days for other relatives.",
+   "score": 0.09283
+  },
+  {
+   "id": "leave.md#2.3",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Carryover",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Up to 5 unused days of paid leave may be carried into the next calendar year. Carried-over days expire if they are not used by March 31.",
+   "score": 0.09192
+  }
+ ]
+}

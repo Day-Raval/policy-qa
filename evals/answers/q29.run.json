@@ -1,0 +1,70 @@
+{
+ "question": "Is there a gym membership stipend?",
+ "queries": [
+  "Is there a gym membership stipend?",
+  "fitness gym wellness stipend reimbursement",
+  "gym membership allowance"
+ ],
+ "covered": false,
+ "include_superseded": false,
+ "coverage": {
+  "best": 0.333,
+  "section": "remote-work.md#2.2",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "remote-work.md#2.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Internet stipend",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees in approved fully remote roles receive an internet stipend of $50 per month, paid through payroll.",
+   "score": 0.06531
+  },
+  {
+   "id": "expenses.md#2.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Daily meal allowance",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When travelling on company business, the daily meal allowance is $75.",
+   "score": 0.06337
+  },
+  {
+   "id": "expenses.md#2.2",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "High-cost cities",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "In New York, San Francisco and London, the daily meal allowance is $95.",
+   "score": 0.05817
+  },
+  {
+   "id": "leave.md#4.2",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Bereavement leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees may take up to 5 paid days for the death of an immediate family member and up to 2 paid days for other relatives.",
+   "score": 0.0457
+  },
+  {
+   "id": "expenses.md#3.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Limits",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Client meals may cost up to $120 per person. A director must approve any client meal over $500 in total.",
+   "score": 0.04436
+  }
+ ]
+}

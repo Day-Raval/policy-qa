@@ -1,0 +1,70 @@
+{
+ "question": "What is the daily meal allowance on a business trip to Chicago?",
+ "queries": [
+  "What is the daily meal allowance on a business trip to Chicago?",
+  "daily meal allowance travelling company business Chicago",
+  "meal allowance high-cost cities"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "expenses.md#2.2",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "expenses.md#2.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Daily meal allowance",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When travelling on company business, the daily meal allowance is $75.",
+   "score": 0.09783
+  },
+  {
+   "id": "expenses.md#2.2",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "High-cost cities",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "In New York, San Francisco and London, the daily meal allowance is $95.",
+   "score": 0.0973
+  },
+  {
+   "id": "expenses.md#3.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Limits",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Client meals may cost up to $120 per person. A director must approve any client meal over $500 in total.",
+   "score": 0.09198
+  },
+  {
+   "id": "travel.md#1.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Approval",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "All business travel needs manager approval at least 14 days before departure, except for client emergencies.",
+   "score": 0.07548
+  },
+  {
+   "id": "travel.md#4.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Taxis and rideshare",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Taxis and rideshare are reimbursable on business trips. Rental cars need manager approval.",
+   "score": 0.07352
+  }
+ ]
+}

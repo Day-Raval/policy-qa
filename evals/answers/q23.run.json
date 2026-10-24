@@ -1,0 +1,70 @@
+{
+ "question": "Can I use a USB stick on my work laptop?",
+ "queries": [
+  "Can I use a USB stick on my work laptop?",
+  "USB storage devices company laptops blocked",
+  "removable storage devices company devices"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "it-security.md#2.3",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "it-security.md#2.3",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "USB storage",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "USB storage devices are blocked on company laptops.",
+   "score": 0.09836
+  },
+  {
+   "id": "it-security.md#2.1",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Company data",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Company data may be stored only on company-managed devices.",
+   "score": 0.07671
+  },
+  {
+   "id": "it-security.md#2.4",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Lost or stolen devices",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "A lost or stolen device must be reported to the IT service desk within 24 hours.",
+   "score": 0.0759
+  },
+  {
+   "id": "it-security.md#1.1",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Multi-factor authentication",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Multi-factor authentication is required on every company account.",
+   "score": 0.0731
+  },
+  {
+   "id": "it-security.md#3.1",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Public Wi-Fi",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "The company VPN must be switched on before using public Wi-Fi.",
+   "score": 0.07299
+  }
+ ]
+}

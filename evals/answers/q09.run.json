@@ -1,0 +1,70 @@
+{
+ "question": "What internet stipend do remote employees get?",
+ "queries": [
+  "What internet stipend do remote employees get?",
+  "internet stipend fully remote roles",
+  "remote work internet stipend per month"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "remote-work.md#2.2",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "remote-work.md#2.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Internet stipend",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees in approved fully remote roles receive an internet stipend of $50 per month, paid through payroll.",
+   "score": 0.09836
+  },
+  {
+   "id": "remote-work.md#2.1",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Eligibility",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "A role may be fully remote only with written approval from the employee's director and HR.",
+   "score": 0.09626
+  },
+  {
+   "id": "remote-work.md#3.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Security while remote",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When working outside the office, employees must follow the IT Security Policy, including the VPN rule for public Wi-Fi.",
+   "score": 0.0955
+  },
+  {
+   "id": "remote-work.md#3.1",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Working abroad",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees may work from a country other than their country of employment for up to 30 days in a calendar year, with prior approval from HR.",
+   "score": 0.0921
+  },
+  {
+   "id": "remote-work.md#1.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Core hours",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "All employees must be available between 10:00 and 15:00 in their local time zone on working days.",
+   "score": 0.09209
+  }
+ ]
+}

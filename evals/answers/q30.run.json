@@ -1,0 +1,70 @@
+{
+ "question": "Can I bring my dog to the office?",
+ "queries": [
+  "Can I bring my dog to the office?",
+  "pets dogs in the office",
+  "animals allowed at headquarters office"
+ ],
+ "covered": false,
+ "include_superseded": false,
+ "coverage": {
+  "best": 0.456,
+  "section": "remote-work.md#1.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "remote-work.md#1.1",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Office days",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees assigned to the headquarters office must work on site at least 2 days per week. Each team chooses its office days.",
+   "score": 0.09836
+  },
+  {
+   "id": "expenses.md#4.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Scope",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "This section covers equipment for working from home.",
+   "score": 0.09576
+  },
+  {
+   "id": "expenses.md#4.2",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Home-office equipment",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Home-office equipment up to $300 per year is reimbursable for full-time employees. This includes chairs, desks and monitors.",
+   "score": 0.09575
+  },
+  {
+   "id": "remote-work.md#3.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Security while remote",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When working outside the office, employees must follow the IT Security Policy, including the VPN rule for public Wi-Fi.",
+   "score": 0.09328
+  },
+  {
+   "id": "it-security.md#2.4",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Lost or stolen devices",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "A lost or stolen device must be reported to the IT service desk within 24 hours.",
+   "score": 0.04546
+  }
+ ]
+}

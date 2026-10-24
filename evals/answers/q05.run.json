@@ -1,0 +1,70 @@
+{
+ "question": "When do I need a doctor's note for sick leave?",
+ "queries": [
+  "When do I need a doctor's note for sick leave?",
+  "medical certificate doctor's note sick leave consecutive working days",
+  "sick days"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "leave.md#3.2",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "leave.md#3.2",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Medical certificate",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "A doctor's note is required for sick leave of more than 3 consecutive working days.",
+   "score": 0.09783
+  },
+  {
+   "id": "leave.md#3.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Sick days",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees receive 10 paid sick days per calendar year, separate from annual paid leave. Unused sick days do not carry over.",
+   "score": 0.0973
+  },
+  {
+   "id": "leave.md#5.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Contractor leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Contractors are not eligible for paid leave, sick leave or parental leave under this policy. Their time away is governed by their contract.",
+   "score": 0.09474
+  },
+  {
+   "id": "leave.md#2.4",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Requesting leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Requests for 3 or more days of leave must be submitted in the HR portal at least 10 working days in advance.",
+   "score": 0.09328
+  },
+  {
+   "id": "leave.md#2.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Annual paid leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Full-time employees earn 20 days of paid leave per calendar year, accrued at 1.67 days per month.",
+   "score": 0.09093
+  }
+ ]
+}

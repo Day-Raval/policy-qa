@@ -1,0 +1,70 @@
+{
+ "question": "How big is the relocation bonus for new hires?",
+ "queries": [
+  "How big is the relocation bonus for new hires?",
+  "relocation bonus new hire moving expenses",
+  "relocation allowance"
+ ],
+ "covered": false,
+ "include_superseded": false,
+ "coverage": {
+  "best": 0.459,
+  "section": "expenses.md#2.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "expenses.md#2.2",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "High-cost cities",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "In New York, San Francisco and London, the daily meal allowance is $95.",
+   "score": 0.09704
+  },
+  {
+   "id": "travel.md#3.2",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "High-cost cities",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "In New York, San Francisco and London, the hotel cap is $350 per night.",
+   "score": 0.07503
+  },
+  {
+   "id": "expenses.md#6.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Contractor expenses",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Contractors may claim travel costs only when pre-approved in writing by their manager. No other expenses are reimbursable for contractors.",
+   "score": 0.05366
+  },
+  {
+   "id": "it-security.md#1.1",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Multi-factor authentication",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Multi-factor authentication is required on every company account.",
+   "score": 0.04694
+  },
+  {
+   "id": "remote-work.md#3.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Security while remote",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When working outside the office, employees must follow the IT Security Policy, including the VPN rule for public Wi-Fi.",
+   "score": 0.04665
+  }
+ ]
+}

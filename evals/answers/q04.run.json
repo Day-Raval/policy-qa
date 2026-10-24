@@ -1,0 +1,70 @@
+{
+ "question": "Do contractors get paid leave?",
+ "queries": [
+  "Do contractors get paid leave?",
+  "contractor leave eligibility paid leave",
+  "contractors covered by leave policy"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "leave.md#5.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "leave.md#5.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Contractor leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Contractors are not eligible for paid leave, sick leave or parental leave under this policy. Their time away is governed by their contract.",
+   "score": 0.0981
+  },
+  {
+   "id": "leave.md#2.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Annual paid leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Full-time employees earn 20 days of paid leave per calendar year, accrued at 1.67 days per month.",
+   "score": 0.09409
+  },
+  {
+   "id": "expenses.md#6.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Contractor expenses",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Contractors may claim travel costs only when pre-approved in writing by their manager. No other expenses are reimbursable for contractors.",
+   "score": 0.09322
+  },
+  {
+   "id": "leave.md#2.2",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Part-time employees",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Part-time employees earn paid leave in proportion to their contracted hours. An employee contracted for 20 hours a week earns 10 days per year.",
+   "score": 0.09196
+  },
+  {
+   "id": "leave.md#4.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Parental leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "The primary caregiver receives 16 weeks of fully paid parental leave. The secondary caregiver receives 6 weeks of fully paid parental leave. Parental leave must start within 12 months of the birth or adoption.",
+   "score": 0.09119
+  }
+ ]
+}

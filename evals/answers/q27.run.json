@@ -1,0 +1,70 @@
+{
+ "question": "How long does my password need to be?",
+ "queries": [
+  "How long does my password need to be?",
+  "password length characters",
+  "passwords minimum length"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "it-security.md#1.2",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "it-security.md#1.2",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Passwords",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Passwords must be at least 14 characters long and must not be reused across systems.",
+   "score": 0.09836
+  },
+  {
+   "id": "travel.md#2.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Cabin class",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Economy class is the standard for all flights. Directors and above may book business class for flights longer than 6 hours.",
+   "score": 0.04599
+  },
+  {
+   "id": "leave.md#2.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Annual paid leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Full-time employees earn 20 days of paid leave per calendar year, accrued at 1.67 days per month.",
+   "score": 0.04494
+  },
+  {
+   "id": "leave.md#2.2",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Part-time employees",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Part-time employees earn paid leave in proportion to their contracted hours. An employee contracted for 20 hours a week earns 10 days per year.",
+   "score": 0.04466
+  },
+  {
+   "id": "remote-work.md#1.1",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Office days",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees assigned to the headquarters office must work on site at least 2 days per week. Each team chooses its office days.",
+   "score": 0.04459
+  }
+ ]
+}

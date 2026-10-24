@@ -1,0 +1,70 @@
+{
+ "question": "What are the core hours everyone must be available?",
+ "queries": [
+  "What are the core hours everyone must be available?",
+  "core hours available local time zone",
+  "all employees must be available working days"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "remote-work.md#1.2",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "remote-work.md#1.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Core hours",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "All employees must be available between 10:00 and 15:00 in their local time zone on working days.",
+   "score": 0.09836
+  },
+  {
+   "id": "leave.md#2.2",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Part-time employees",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Part-time employees earn paid leave in proportion to their contracted hours. An employee contracted for 20 hours a week earns 10 days per year.",
+   "score": 0.0935
+  },
+  {
+   "id": "it-security.md#2.4",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Lost or stolen devices",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "A lost or stolen device must be reported to the IT service desk within 24 hours.",
+   "score": 0.08454
+  },
+  {
+   "id": "remote-work.md#3.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Security while remote",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When working outside the office, employees must follow the IT Security Policy, including the VPN rule for public Wi-Fi.",
+   "score": 0.07011
+  },
+  {
+   "id": "leave.md#2.4",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Requesting leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Requests for 3 or more days of leave must be submitted in the HR portal at least 10 working days in advance.",
+   "score": 0.06944
+  }
+ ]
+}

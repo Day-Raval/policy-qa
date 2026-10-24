@@ -1,0 +1,70 @@
+{
+ "question": "What is the daily meal allowance in London?",
+ "queries": [
+  "What is the daily meal allowance in London?",
+  "daily meal allowance high-cost cities London",
+  "meals travelling company business allowance"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "expenses.md#2.2",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "expenses.md#2.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Daily meal allowance",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When travelling on company business, the daily meal allowance is $75.",
+   "score": 0.09783
+  },
+  {
+   "id": "expenses.md#2.2",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "High-cost cities",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "In New York, San Francisco and London, the daily meal allowance is $95.",
+   "score": 0.0973
+  },
+  {
+   "id": "expenses.md#3.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Limits",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Client meals may cost up to $120 per person. A director must approve any client meal over $500 in total.",
+   "score": 0.09333
+  },
+  {
+   "id": "travel.md#3.2",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "High-cost cities",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "In New York, San Francisco and London, the hotel cap is $350 per night.",
+   "score": 0.07658
+  },
+  {
+   "id": "it-security.md#2.2",
+   "doc": "it-security.md",
+   "title": "IT Security Policy",
+   "heading": "Personal phones",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Personal phones may access company email only through the managed mail app.",
+   "score": 0.05695
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "question": "How long do I have to submit an expense claim?",
+ "queries": [
+  "How long do I have to submit an expense claim?",
+  "expense claims submission deadline days",
+  "submit expense claims finance portal within days"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "expenses.md#1.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "expenses.md#1.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Submission deadline",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Expense claims must be submitted in the finance portal within 30 days of the expense.",
+   "score": 0.09836
+  },
+  {
+   "id": "expenses.md#5.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Approval chain",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Claims up to $1,000 are approved by the employee's manager. Claims above $1,000 also need approval from Finance.",
+   "score": 0.09652
+  },
+  {
+   "id": "expenses.md#6.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Contractor expenses",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Contractors may claim travel costs only when pre-approved in writing by their manager. No other expenses are reimbursable for contractors.",
+   "score": 0.095
+  },
+  {
+   "id": "expenses.md#1.2",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Receipts",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "An itemized receipt is required for every expense over $25.",
+   "score": 0.09212
+  },
+  {
+   "id": "expenses.md#4.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Scope",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "This section covers equipment for working from home.",
+   "score": 0.08769
+  }
+ ]
+}

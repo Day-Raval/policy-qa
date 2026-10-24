@@ -1,0 +1,70 @@
+{
+ "question": "Which dental insurance plans are offered?",
+ "queries": [
+  "Which dental insurance plans are offered?",
+  "dental insurance health benefits plans",
+  "dental coverage"
+ ],
+ "covered": false,
+ "include_superseded": false,
+ "coverage": {
+  "best": 0.0,
+  "section": null,
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "leave.md#4.1",
+   "doc": "leave.md",
+   "title": "Leave Policy",
+   "heading": "Parental leave",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "The primary caregiver receives 16 weeks of fully paid parental leave. The secondary caregiver receives 6 weeks of fully paid parental leave. Parental leave must start within 12 months of the birth or adoption.",
+   "score": 0.04712
+  },
+  {
+   "id": "expenses.md#3.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Limits",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Client meals may cost up to $120 per person. A director must approve any client meal over $500 in total.",
+   "score": 0.04539
+  },
+  {
+   "id": "travel.md#4.1",
+   "doc": "travel.md",
+   "title": "Travel Policy",
+   "heading": "Taxis and rideshare",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Taxis and rideshare are reimbursable on business trips. Rental cars need manager approval.",
+   "score": 0.04524
+  },
+  {
+   "id": "code-of-conduct.md#2.1",
+   "doc": "code-of-conduct.md",
+   "title": "Code of Conduct",
+   "heading": "Disclosure",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees must disclose any outside job, board seat or investment in a supplier to Compliance within 30 days.",
+   "score": 0.04352
+  },
+  {
+   "id": "expenses.md#1.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Submission deadline",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Expense claims must be submitted in the finance portal within 30 days of the expense.",
+   "score": 0.04348
+  }
+ ]
+}

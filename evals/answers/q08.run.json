@@ -1,0 +1,70 @@
+{
+ "question": "How many days a week do headquarters employees have to be in the office?",
+ "queries": [
+  "How many days a week do headquarters employees have to be in the office?",
+  "headquarters office days work on site per week",
+  "hybrid work office attendance"
+ ],
+ "covered": true,
+ "include_superseded": false,
+ "coverage": {
+  "best": 1.0,
+  "section": "remote-work.md#1.1",
+  "threshold": 0.55
+ },
+ "excluded_superseded": [
+  "remote-work-2024.md"
+ ],
+ "results": [
+  {
+   "id": "remote-work.md#1.1",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Office days",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Employees assigned to the headquarters office must work on site at least 2 days per week. Each team chooses its office days.",
+   "score": 0.09836
+  },
+  {
+   "id": "expenses.md#4.1",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Scope",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "This section covers equipment for working from home.",
+   "score": 0.09404
+  },
+  {
+   "id": "remote-work.md#3.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Security while remote",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "When working outside the office, employees must follow the IT Security Policy, including the VPN rule for public Wi-Fi.",
+   "score": 0.09404
+  },
+  {
+   "id": "remote-work.md#1.2",
+   "doc": "remote-work.md",
+   "title": "Remote and Hybrid Work Policy",
+   "heading": "Core hours",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "All employees must be available between 10:00 and 15:00 in their local time zone on working days.",
+   "score": 0.09202
+  },
+  {
+   "id": "expenses.md#4.2",
+   "doc": "expenses.md",
+   "title": "Expense Policy",
+   "heading": "Home-office equipment",
+   "effective": "2026-01-01",
+   "superseded": false,
+   "text": "Home-office equipment up to $300 per year is reimbursable for full-time employees. This includes chairs, desks and monitors.",
+   "score": 0.092
+  }
+ ]
+}
