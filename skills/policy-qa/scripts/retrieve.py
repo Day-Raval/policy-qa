@@ -157,6 +157,7 @@ def retrieve(folder, question, rewrites=(), k=5, include_superseded=False):
         "question": question,
         "queries": queries,
         "covered": covered,
+        "include_superseded": include_superseded,
         "coverage": {"best": round(best_cov, 3), "section": best_at, "threshold": MIN_COVERAGE},
         "excluded_superseded": sorted({s["doc"] for s in allsecs if s["superseded"]}) if not include_superseded else [],
         "results": hits,

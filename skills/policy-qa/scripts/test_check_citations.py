@@ -48,6 +48,15 @@ class TestCheck(unittest.TestCase):
         p = problems('The stipend is paid. [remote-work-2024.md#2.1: "internet stipend"]')
         self.assertIn("superseded", p[0])
 
+    def test_superseded_allowed_only_when_requested_and_labelled(self):
+        old = {"id": "remote-work-2024.md#2.1", "superseded": True, "text": "an internet stipend of $30 per month."}
+        run = dict(RUN, include_superseded=True, excluded_superseded=[], results=RUN["results"] + [old])
+        ok = 'The superseded policy paid $30 per month. [remote-work-2024.md#2.1: "$30 per month"]'
+        self.assertEqual(problems(ok, run), [])
+        unlabelled = 'The stipend is $30 per month. [remote-work-2024.md#2.1: "$30 per month"]'
+        self.assertIn("superseded", problems(unlabelled, run)[0])
+        self.assertIn("superseded", problems(ok, dict(run, include_superseded=False))[0])
+
     def test_quote_not_verbatim(self):
         p = problems('Receipts are needed. [expenses.md#1.2: "a receipt is needed for expenses over $25"]')
         self.assertIn("quote not found", p[0])

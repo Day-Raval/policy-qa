@@ -7,7 +7,8 @@ Each sentence must pass:
   1. it has at least one citation (unless it only says the policies do not cover or
      mention something, or is a Sources / Closest sections / advice line);
   2. every cited section was retrieved in run.json;
-  3. no cited section is from a superseded document;
+  3. no cited section is from a superseded document, unless the run used
+     --include-superseded and the sentence says "superseded";
   4. every quote appears in its section's text (ignoring whitespace and quote style);
   5. every number in the sentence appears in its quotes or in the user's question.
 Prints a JSON report. Exit code 0 = all pass, 1 = problems found.
@@ -103,7 +104,7 @@ def check(answer, run):
                 why = "superseded document" if sid.split("#")[0] in old_docs else "section not in run.json results"
                 errors.append({"sentence": label, "problem": f"{sid}: {why}"})
                 continue
-            if sec.get("superseded"):
+            if sec.get("superseded") and not (run.get("include_superseded") and "superseded" in text.lower()):
                 errors.append({"sentence": label, "problem": f"{sid}: superseded document"})
             if norm(quote) not in norm(sec["text"]):
                 errors.append({"sentence": label, "problem": f"{sid}: quote not found in section: \"{quote}\""})
