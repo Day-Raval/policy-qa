@@ -18,8 +18,11 @@ from pathlib import Path
 CITE = re.compile(r"\[([^\[\]\s:]+#[\d.]*\d):\s*[\"“]([^\"”]+)[\"”]\]")
 NUM = re.compile(r"\d[\d,]*(?:[.:]\d+)?")
 SPLIT = re.compile(r"(?<=[.!?])\s+")
-NO_CLAIM = re.compile(r"do(?:es)? not (?:cover|mention)|not covered|not legal or HR advice"
-                      r"|^ask HR|^closest sections|^sources:", re.I)
+NO_CLAIM = re.compile(
+    r"(?:Answer:\s*)?(?:The provided policies do not cover this\.|"
+    r"The policies do not mention [\w -]+\.|"
+    r"This is a reading of the documents provided, not legal or HR advice\.|"
+    r"Ask HR or the policy owner for a definitive answer\.)", re.I)
 CITE_ONLY = re.compile(r"^(?:\s*⟦\d+⟧[.,;]?)+\s*$")
 
 
@@ -42,7 +45,8 @@ def sentences(answer):
 
     for line in CITE.sub(hold, answer).splitlines():  # replace citations first: a quote may wrap lines
         line = re.sub(r"^\s*(?:[-*+]|\d+\.)\s+", "", line).replace("**", "").strip()
-        if not line or line.startswith(("#", "```")) or line.lower() in ("details", "answer:"):
+        line = re.sub(r"^#{1,6}\s+", "", line)
+        if not line or line.lower() in ("details", "answer:"):
             continue
         parts = []
         for frag in SPLIT.split(line):
@@ -62,11 +66,34 @@ def check(answer, run):
     old_docs = set(run.get("excluded_superseded", []))
     asked = numbers(run.get("question", ""))
     errors, n = [], 0
-    for text, cites in sentences(answer):
+    # Metadata is generated from retrieved records, never exempt arbitrary prose.
+    body = []
+    for line in answer.splitlines():
+        plain = line.replace("**", "").strip()
+        if plain.lower().startswith(("sources:", "closest sections checked:")):
+            value = plain.split(":", 1)[1].strip()
+            allowed = set()
+            for sid, sec in secs.items():
+                allowed.add(sid)
+                if sec.get("heading"):
+                    allowed.add(f"{sid} {sec['heading']}")
+                if sec.get("title"):
+                    allowed.add(f"{sid} ({sec['title']}, {sec.get('effective') or 'undated'})")
+            # Consume whole known entries, including commas within titles.
+            while value:
+                match = next((item for item in sorted(allowed, key=len, reverse=True)
+                              if value == item or value.startswith(item + ", ")), None)
+                if match is None:
+                    errors.append({"sentence": plain[:90], "problem": "invalid source metadata"})
+                    break
+                value = value[len(match):].removeprefix(", ")
+            continue
+        body.append(line)
+    for text, cites in sentences("\n".join(body)):
         n += 1
         label = text if len(text) <= 90 else text[:87] + "..."
         if not cites:
-            if not NO_CLAIM.search(text) or (numbers(text) - asked and not re.match(r"(?i)closest|sources", text)):
+            if not NO_CLAIM.fullmatch(text):
                 errors.append({"sentence": label, "problem": "no citation"})
             continue
         quotes = ""

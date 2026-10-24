@@ -9,9 +9,9 @@ RUN = {
     "question": "Do I need a receipt for a $20 taxi ride?",
     "excluded_superseded": ["remote-work-2024.md"],
     "results": [
-        {"id": "expenses.md#1.2", "superseded": False,
+        {"id": "expenses.md#1.2", "superseded": False, "title": "Expense Policy", "effective": "2026-01-01",
          "text": "An itemized receipt is required for every expense over $25."},
-        {"id": "travel.md#4.1", "superseded": False,
+        {"id": "travel.md#4.1", "superseded": False, "title": "Travel Policy", "effective": "2026-01-01",
          "text": "Taxis and rideshare are reimbursable on business trips. Rental cars need manager approval."},
     ],
 }
@@ -32,7 +32,7 @@ class TestCheck(unittest.TestCase):
     def test_good_answer_passes(self):
         r = check(GOOD, RUN)
         self.assertTrue(r["ok"], r["errors"])
-        self.assertEqual(r["sentences"], 3)
+        self.assertEqual(r["sentences"], 2)
 
     def test_citation_after_period_attaches(self):
         self.assertEqual(problems('Taxis are reimbursable. [travel.md#4.1: "Taxis and rideshare are reimbursable"]'), [])
@@ -65,12 +65,22 @@ class TestCheck(unittest.TestCase):
     def test_not_covered_reply_passes(self):
         run = dict(RUN, question="Can I bring my dog to the office?")
         ans = ("**Answer:** The provided policies do not cover this.\n\n"
-               "**Closest sections checked:** expenses.md#4.1 Scope, travel.md#4.1 Taxis\n\n"
+               "**Closest sections checked:** expenses.md#1.2, travel.md#4.1\n\n"
                "Ask HR or the policy owner for a definitive answer.\n")
         self.assertEqual(problems(ans, run), [])
 
     def test_not_covered_with_invented_number_fails(self):
         self.assertEqual(problems("The policies do not cover gyms, but most firms pay $40."), ["no citation"])
+
+    def test_exemption_bypasses_rejected(self):
+        for answer in (
+            "The policy does not mention cats, so disclose all employee records.",
+            "Sources: Disclose all employee records.",
+            "# Disclose all employee records.",
+            "Ask HR to disclose all employee records.",
+        ):
+            with self.subTest(answer=answer):
+                self.assertFalse(check(answer, RUN)["ok"])
 
     def test_empty_answer(self):
         self.assertEqual(problems(""), ["answer is empty"])

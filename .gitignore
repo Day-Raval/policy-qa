@@ -1,5 +1,8 @@
 # Never commit real company policies: only the synthetic corpus in evals/corpus/ is allowed
 my-policies/
+.policy-qa-private/
+run.json
+answer.md
 *.private.md
 *.index.json
 __pycache__/
@@ -9,3 +12,6 @@ __pycache__/
 *.zip
 .DS_Store
 docs/
+
+#security check doc
+security_best_practices_report.md

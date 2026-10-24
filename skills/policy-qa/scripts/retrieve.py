@@ -122,11 +122,22 @@ def retrieve(folder, question, rewrites=(), k=5, include_superseded=False):
     Rewrites are search alternatives, not answers; this function does not load rewrites.json.
     Coverage uses the best single query/section match, not the combined ranking score.
     """
+    if not isinstance(k, int) or isinstance(k, bool) or not 1 <= k <= 50:
+        raise SystemExit("k must be between 1 and 50")
+    if not isinstance(question, str) or not question.strip() or len(question) > 4000:
+        raise SystemExit("Question must contain 1 to 4000 characters")
+    rewrites = list(rewrites)
+    if len(rewrites) > 5 or any(not isinstance(r, str) or len(r) > 4000 for r in rewrites):
+        raise SystemExit("Use at most 5 rewrites of at most 4000 characters each")
     allsecs = build_index(folder)
-    for s in allsecs:  # fold empty parent headings into their children
-        s["parents"] = " ".join(p["heading"] for p in allsecs
-                                if p["doc"] == s["doc"] and not p["text"] and s["number"].startswith(p["number"] + "."))
+    parents = {(s["doc"], s["number"]): s["heading"] for s in allsecs if not s["text"]}
+    for s in allsecs:
+        parts = s["number"].split(".")
+        s["parents"] = " ".join(parents.get((s["doc"], ".".join(parts[:i])), "")
+                                for i in range(1, len(parts))).strip()
     secs = [s for s in allsecs if s["text"] and (include_superseded or not s["superseded"])]
+    if not secs or not any(words(s["text"] + " " + s["heading"]) for s in secs):
+        raise SystemExit("No searchable current policy sections remain")
     idx = Index(secs)
     queries = [question] + [r for r in rewrites if r.strip()]
     fused, best_cov, best_at = Counter(), 0.0, None

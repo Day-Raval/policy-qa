@@ -4,6 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from index import build_index  # noqa: E402
+from unittest.mock import patch
 from retrieve import retrieve  # noqa: E402
 
 DOCS = {
@@ -71,6 +72,24 @@ class TestIndex(Base):
         with self.assertRaises(SystemExit):
             build_index(self.dir)
 
+    def test_policy_directory_rejected(self):
+        (self.dir / "directory.md").mkdir()
+        with self.assertRaises(SystemExit):
+            build_index(self.dir)
+
+    def test_reparse_file_rejected(self):
+        from types import SimpleNamespace
+        import stat
+        with patch.object(Path, "lstat", return_value=SimpleNamespace(
+                st_mode=stat.S_IFREG, st_file_attributes=0x400)):
+            with self.assertRaises(SystemExit):
+                build_index(self.dir)
+
+    def test_oversized_file_rejected(self):
+        with patch("index.MAX_FILE_BYTES", 10):
+            with self.assertRaises(SystemExit):
+                build_index(self.dir)
+
     def test_no_sections_rejected(self):
         with tempfile.TemporaryDirectory() as d:
             (Path(d) / "a.md").write_text("no headings here\n", encoding="utf-8")
@@ -113,6 +132,19 @@ class TestRetrieve(Base):
     def test_amounts_do_not_count_toward_coverage(self):
         run = retrieve(self.dir, "Is there a $50 gym stipend?")
         self.assertLess(run["coverage"]["best"], 0.55)
+
+    def test_invalid_query_limits(self):
+        for options in ({"k": 0}, {"k": 51}, {"rewrites": ["x"] * 6}):
+            with self.assertRaises(SystemExit):
+                retrieve(self.dir, "leave", **options)
+        with self.assertRaises(SystemExit):
+            retrieve(self.dir, "x" * 4001)
+
+    def test_all_superseded_rejected_cleanly(self):
+        with tempfile.TemporaryDirectory() as folder:
+            (Path(folder) / "old.md").write_text("SUPERSEDED\n## 1 Old\nLeave policy", encoding="utf-8")
+            with self.assertRaisesRegex(SystemExit, "No searchable"):
+                retrieve(folder, "leave")
 
     def test_k_limits_results(self):
         self.assertLessEqual(len(retrieve(self.dir, "leave", k=2)["results"]), 2)
